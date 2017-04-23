@@ -35,7 +35,7 @@ class cursos extends Controller
     public function store(Request $request)
     {
         //
-        return response(['msj'=>'Marca Guardada Exitosamente'],200);
+        return response([$request],200);
     }
 
     /**
