@@ -8,8 +8,8 @@ class ApiAuthController extends Controller
 {
     public function userAuth(Request $request)
     {
-        return response($request,200);
-        
+        return response(['Esto llego'=>'si'],200);
+
         $credentials = $request->only('email','password','role');
         $token = null;
 
