@@ -35,7 +35,7 @@ class cursos extends Controller
     public function store(Request $request)
     {
         //
-        return response([$request],200);
+        return response($request,200);
     }
 
     /**
