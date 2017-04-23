@@ -11,6 +11,7 @@ class ApiAuthController extends Controller
 
         $credentials = $request->only('email','password');
         $token = null;
+        return response(['Erro' => 'Invalid Credentials'],400);
         try{
             if($token != JWTAuth::attemp($credentials))
             {
