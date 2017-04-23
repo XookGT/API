@@ -16,6 +16,8 @@ class ApiAuthController extends Controller
             {
                 return response()->json(['Erro' => 'Invalid Credentials'],400);
             }
+            else
+                return response()->json(compact($token));
 
         }catch(JWTException $ex)
         {
