@@ -14,14 +14,14 @@ class ApiAuthController extends Controller
         try{
             if(!$token = JWTAuth::attemp($credentials))
             {
-                return response()->json(['Erro' => 'Invalid Credentials'],400);
+                return response(['Erro' => 'Invalid Credentials'],400);
             }
             else
-                return response()->json(compact($token));
+                return response(compact($token));
 
         }catch(JWTException $ex)
         {
-            return response()->json(['Error' => "It has have an error"],500);
+            return response(['Error' => "It has have an error"],500);
         }
     }
 }
