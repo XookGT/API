@@ -19,4 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::resource('/cursos','cursos');
 
-Route::post('auth_login', 'ApiAuthController@userAuth');
+Route::post('auth_login', 'ApiAuthController@authenticate');
