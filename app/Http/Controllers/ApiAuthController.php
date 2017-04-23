@@ -21,7 +21,7 @@ class ApiAuthController extends Controller
 
         }catch(JWTException $ex)
         {
-            return response()->json(['Error' => $ex->getMessage()],500);
+            return response()->json(['Error' => "It has have an error"],500);
         }
     }
 }
