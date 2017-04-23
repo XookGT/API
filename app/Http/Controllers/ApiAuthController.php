@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use JWTAuth;
+use Tymon\JWTAuth\Exceptions\JWTException;
 
 class ApiAuthController extends Controller
 {
@@ -13,8 +15,7 @@ class ApiAuthController extends Controller
         $token = null;
         
         try{
-            return response(['Erro' => 'Invalid Credentials'],400);
-            if($token != JWTAuth::attemp($credentials))
+            if(!$token = JWTAuth::attemp($credentials))
             {
                 return response(['Erro' => 'Invalid Credentials'],400);
             }
