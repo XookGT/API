@@ -8,11 +8,10 @@ class ApiAuthController extends Controller
 {
     public function userAuth(Request $request)
     {
-        return response(['Esto llego'=>'si'],200);
 
-        $credentials = $request->only('email','password','role');
+        $credentials = $request->only('email','password');
         $token = null;
-
+        return "hola";
         try{
             if(!$token = JWTAuth::attemp($credentials))
             {
