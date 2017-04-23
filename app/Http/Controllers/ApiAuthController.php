@@ -27,4 +27,4 @@ class ApiAuthController extends Controller
         return response()->json(compact('token'));
     }
 }
-}
+
