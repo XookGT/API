@@ -33,6 +33,8 @@ require __DIR__.'/../bootstrap/autoload.php';
 |
 */
 
+header("Access-Control-Allow-Origin: *");
+
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
 /*
