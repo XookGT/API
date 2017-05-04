@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use Notifiable;
+    //Un usuario tiene un rol, y tiene un estado de perfil
 
     /**
      * The attributes that are mass assignable.
