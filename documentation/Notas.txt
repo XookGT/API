@@ -81,3 +81,19 @@ Anotaciones BackEnd
             'jwt.refresh' => \Tymon\JWAuth\Middleware\RefreshToken::class,
         -Probar en Postman y deberia devolver el token para un usuario valido
 
+
+Ahora en Angular 
+Usaremos la herramienta YEOMAN
+yeoman.Instalacion
+
+Que es un conjutno de herramientas:
+YO: Encargada de hacer scanffolding del poryecto
+Grunt: Encargado de hacer tareas de testing, y no hay necesidad de refrezcar el navegador.
+Bower: Packege manager de librerias.
+
+
+En la Carpeta con el proyecto appi
+hacer una nueva Carpeta, no dentro del proyecto api si no donde esta la Carpeta
+crear un api_font (Carpeta)
+
+
