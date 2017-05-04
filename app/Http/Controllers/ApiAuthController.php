@@ -11,8 +11,6 @@ class ApiAuthController extends Controller
     public function authenticate(Request $request)
     {
         // grab credentials from the request
-
-           header("Access-Control-Allow-Origin: *");
         $credentials = $request->only('email', 'password', 'name');
 
         try {
