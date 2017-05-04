@@ -15,7 +15,16 @@ class CreatePlacesTable extends Migration
     {
         Schema::create('places', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('name',50);
+            $table->string('description',500);
+            $table->integer('id_city')->unsigned();
+
+            $table->foreign('id_city')
+                ->references('id')
+                ->on('cities')
+                ->onDelete('cascade');
+
+            $table->unique(['name', 'id_city']);
         });
     }
 

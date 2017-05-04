@@ -15,7 +15,22 @@ class CreateTutorialsTable extends Migration
     {
         Schema::create('tutorials', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('name',45)->unique();
+            $table->string('description',500)->nullable();
+            $table->integer('starts');
+            $table->integer('rank');
+            $table->integer('id_tutor')->unsigned();
+            $table->integer('id_course')->unsigned();
+
+            $table->foreign('id_tutor')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
+
+            $table->foreign('id_course')
+                ->references('id')
+                ->on('courses')
+                ->onDelete('cascade');
         });
     }
 

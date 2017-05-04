@@ -15,7 +15,7 @@ class CreateProfileStatusesTable extends Migration
     {
         Schema::create('profile_statuses', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('name',45)->unique();
         });
     }
 
