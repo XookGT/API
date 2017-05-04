@@ -52,7 +52,6 @@ $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()
 );
-$response->header('access-control-allow-origin','*');
 $response->send();
 
 $kernel->terminate($request, $response);
