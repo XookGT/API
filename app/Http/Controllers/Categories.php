@@ -120,7 +120,7 @@ class Categories extends Controller
     {
         $name = $id;
         try{
-            $categorie = self::where('name',$name)->first();
+            $categorie = self::where('id',1)->first();
 
             return response(['msj'=>'Hola y adios'],200);
         }
