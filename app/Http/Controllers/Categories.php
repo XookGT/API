@@ -118,9 +118,7 @@ class Categories extends Controller
 
     public function SearchByName($id)
     {
-
-
-        dd($id);
+        $name = $id;
         try{
             $categorie = Categorie::SearchByName($name);
 
