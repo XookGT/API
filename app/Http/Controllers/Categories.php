@@ -116,8 +116,11 @@ class Categories extends Controller
         //
     }
 
-    public function SearchByName($name)
+    public function SearchByName(Request $request)
     {
+        $name = $request->name;
+
+        dd($name);
         try{
             $categorie = Categorie::SearchByName($name);
 
