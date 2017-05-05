@@ -120,9 +120,9 @@ class Categories extends Controller
     {
         $name = $id;
         try{
-            $categorie = Categorie::where('id',1)->first();
+            $categorie = Categorie::where('name',$name)->first();
 
-            return response(['msj'=>'Hola y adios'],200);
+            return response([$categorie],200);
         }
         catch(\Exceptio $e)
         {
