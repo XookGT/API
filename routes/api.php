@@ -30,7 +30,7 @@ Route::resource('/day','Days');
 Route::resource('/level','Levels');
 Route::resource('/payment-method','PaymentMethods');
 Route::resource('/payment','Payments');
-Route::resource('/payment-state','PaymentStates');
+Route::resource('/payment-state','PaymentState');
 Route::resource('/place','Places');
 Route::resource('/profile-status','ProfileStatuses');
 Route::resource('/province','Provinces');
