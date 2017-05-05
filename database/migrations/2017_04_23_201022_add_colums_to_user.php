@@ -17,7 +17,7 @@ class AddColumsToUser extends Migration
         Schema::table('users', function(Blueprint $table)
         {
             $table->string('lastname',45)->after('name');
-            $table->string('celphone',20)->after('mail')->unique();
+            $table->string('celphone',20)->after('email')->unique();
             $table->string('celphone2',20)->after('celphone')->nullable();
             $table->string('url_crimina_record',100)->after('celphone2')->nullable();
             $table->string('dni',45)->after('url_crimina_record')->nullable();
