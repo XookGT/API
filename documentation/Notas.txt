@@ -97,3 +97,31 @@ hacer una nueva Carpeta, no dentro del proyecto api si no donde esta la Carpeta
 crear un api_font (Carpeta)
 
 
+Crear Contorladores
+
+php artisan make:controller Banks -- resources
+php artisan make:controller Bills -- resources
+php artisan make:controller BillStates -- resources
+php artisan make:controller Categories -- resources
+php artisan make:controller Cities -- resources
+php artisan make:controller Countries -- resources
+php artisan make:controller Courses -- resources
+php artisan make:controller Days -- resources
+php artisan make:controller Levels -- resources
+php artisan make:controller PaymentMethods -- resources
+php artisan make:controller Payments -- resources
+php artisan make:controller PaymentState -- resources
+php artisan make:controller Places -- resources
+php artisan make:controller ProfileStatuses -- resources
+php artisan make:controller Provinces -- resources
+php artisan make:controller PurcharseOrders -- resources
+php artisan make:controller Roles -- resources
+php artisan make:controller Scores -- resources
+php artisan make:controller StatePurchaseOrders -- resources
+php artisan make:controller StateTutorialPayments -- resources
+php artisan make:controller TutorialDays -- resources
+php artisan make:controller TutorialHasPlaces -- resources
+php artisan make:controller Tutorials -- resources
+php artisan make:controller TutorialPayments -- resources
+php artisan make:controller TutorPayments -- resources
+php artisan make:controller XookCCs -- resources
