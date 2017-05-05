@@ -79,7 +79,7 @@ class Categories extends Controller
     {
         //
 
-        dd("Hola ");
+        dd("Hola y adios");
     }
 
     /**
@@ -116,11 +116,11 @@ class Categories extends Controller
         //
     }
 
-    public function SearchByName(Request $request)
+    public function SearchByName($id)
     {
-        $name = $request->name;
 
-        dd($name);
+
+        dd($id);
         try{
             $categorie = Categorie::SearchByName($name);
 
