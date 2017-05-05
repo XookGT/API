@@ -23,6 +23,7 @@ class Categorie extends Model
 
     public function SearchByName($name)
     {
+        dd("Hola");
         $categorie = self::where('name',$name)->first();
 
         return $categorie;
