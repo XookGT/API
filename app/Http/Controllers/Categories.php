@@ -124,7 +124,7 @@ class Categories extends Controller
         try{
             $categorie = Categorie::SearchByName($name);
 
-            return response(['msj'=>'Hola'],200);
+            return response(['msj'=>'Hola y adios'],200);
         }
         catch(\Exceptio $e)
         {
