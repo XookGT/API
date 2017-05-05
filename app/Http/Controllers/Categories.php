@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Categorie;
 
 class Categories extends Controller
 {
@@ -35,6 +36,37 @@ class Categories extends Controller
     public function store(Request $request)
     {
         //
+        try
+        {
+            $this->validate($request,[
+            'name' => 'required|unique:categories',
+            'starts' => 'required',
+            'rank' => 'required',
+
+            ]);
+
+            $categorie = new Categorie();
+            $categorie->name = $request->name;
+            $categorie->starts = $request->starts;
+            $categorie->rank = $request->rank;
+            
+            $categorie->save();
+
+            return response(['msj'=>'Successfull!!!'],200);
+
+            /*
+                200 ok
+                500 error del servidor
+                404 not found
+                403 bad request
+                503 bad gw
+            */
+
+        }
+        catch (\Exception $e)
+        {
+            return response(['msj'=>'it has ocurred an error'],500);
+        }
     }
 
     /**
