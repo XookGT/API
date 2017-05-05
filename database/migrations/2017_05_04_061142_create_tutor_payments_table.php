@@ -15,7 +15,16 @@ class CreateTutorPaymentsTable extends Migration
     {
         Schema::create('tutor_payments', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->dateTime('date');
+            $table->decimal('amount',5,2);
+            $table->string('description',50)->nullable;
+
+            $table->integer('user_id')->unsigned();
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
         });
     }
 

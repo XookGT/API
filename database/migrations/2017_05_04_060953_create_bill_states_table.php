@@ -15,7 +15,9 @@ class CreateBillStatesTable extends Migration
     {
         Schema::create('bill_states', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('description',50);
+            
+
         });
     }
 

@@ -15,7 +15,26 @@ class CreateTutorialDaysTable extends Migration
     {
         Schema::create('tutorial_days', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->integer('id_tutoria')->unsigned();
+            $table->integer('id_place')->unsigned();
+            $table->integer('id_day')->unsigned();
+            $table->dateTime('start_time');
+            $table->dateTime('end_time');
+
+             $table->foreign('id_tutoria')
+                ->references('id')
+                ->on('tutorial_has_places')
+                ->onDelete('cascade');
+
+             $table->foreign('id_place')
+                ->references('id')
+                ->on('tutorial_has_places')
+                ->onDelete('cascade');
+
+             $table->foreign('id_day')
+                ->references('id')
+                ->on('days')
+                ->onDelete('cascade');
         });
     }
 

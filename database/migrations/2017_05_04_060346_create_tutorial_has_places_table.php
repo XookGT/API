@@ -14,8 +14,20 @@ class CreateTutorialHasPlacesTable extends Migration
     public function up()
     {
         Schema::create('tutorial_has_places', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $table->integer('id_tutoria')->unsigned();
+            $table->integer('id_place')->unsigned();
+
+            $table->primary(['id_tutoria', 'id_place']);
+
+            $table->foreign('id_tutoria')
+                ->references('id')
+                ->on('tutorials')
+                ->onDelete('cascade');
+
+            $table->foreign('id_place')
+                ->references('id')
+                ->on('places')
+                ->onDelete('cascade');
         });
     }
 

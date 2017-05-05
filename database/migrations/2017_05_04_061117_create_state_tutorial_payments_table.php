@@ -15,7 +15,7 @@ class CreateStateTutorialPaymentsTable extends Migration
     {
         Schema::create('state_tutorial_payments', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('name',50);
         });
     }
 

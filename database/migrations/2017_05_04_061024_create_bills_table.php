@@ -15,7 +15,25 @@ class CreateBillsTable extends Migration
     {
         Schema::create('bills', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->integer('nit');
+            $table->dateTime('date');
+            $table->decimal('cost', 5, 2);
+            $table->decimal('total_cost', 5, 2);
+            
+            $table->integer('pucharse_order_id')->unsigned();
+            $table->integer('bill_state_id')->unsigned();
+
+            $table->foreign('pucharse_order_id')
+                ->references('id')
+                ->on('purchase_orders')
+                ->onDelete('cascade');
+
+            $table->foreign('bill_state_id')
+                ->references('id')
+                ->on('bill_states')
+                ->onDelete('cascade');
+
+            
         });
     }
 

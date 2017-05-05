@@ -15,7 +15,9 @@ class CreateStatePurchaseOrdersTable extends Migration
     {
         Schema::create('state_purchase_orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('name',45)->unique();
+            $table->string('concept',500)->nullable();
+            
         });
     }
 

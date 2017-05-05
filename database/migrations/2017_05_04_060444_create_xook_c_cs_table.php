@@ -15,7 +15,13 @@ class CreateXookCCsTable extends Migration
     {
         Schema::create('xook_c_cs', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('number_cc',25);
+            $table->integer('id_bank')->unsigned();
+
+            $table->foreign('id_bank')
+                ->references('id')
+                ->on('banks')
+                ->onDelete('cascade');
         });
     }
 
