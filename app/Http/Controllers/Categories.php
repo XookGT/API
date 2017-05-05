@@ -52,7 +52,7 @@ class Categories extends Controller
             
             $categorie->save();
 
-            return response(['msj'=>'Successfull!!!'],200);
+            return response(['msj'=>'Successfull!!!. The ID for the new Categorie is '.$categorie->id],200);
 
             /*
                 200 ok
