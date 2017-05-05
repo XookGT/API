@@ -21,12 +21,12 @@ class CreateTutorialDaysTable extends Migration
             $table->time('end_time');
 
              $table->foreign('id_tutoria')
-                ->references('id')
+                ->references('id_tutorial')
                 ->on('tutorial_has_places')
                 ->onDelete('cascade');
 
              $table->foreign('id_place')
-                ->references('id')
+                ->references('id_place')
                 ->on('tutorial_has_places')
                 ->onDelete('cascade');
 
