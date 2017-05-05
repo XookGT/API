@@ -18,24 +18,24 @@ class CreatePaymentsTable extends Migration
             $table->date('date');
             $table->string('from_cc',45);
             $table->string('descripcon',500)->nullable;
-            $table->integer('xook_cc')->unsigned();
+            $table->integer('id_xook_cc')->unsigned();
             $table->string('pdf_baucher',500)->nullable;
             $table->string('transfer_code',45);
-            $table->integer('state_payment')->unsigned();
-            $table->integer('payment_method')->unsigned();
+            $table->integer('id_state_payment')->unsigned();
+            $table->integer('id_payment_method')->unsigned();
 
 
-            $table->foreign('xook_cc')
+            $table->foreign('id_xook_cc')
                 ->references('id')
                 ->on('xook_c_cs')
                 ->onDelete('cascade');
 
-            $table->foreign('payment_method')
+            $table->foreign('id_payment_method')
                 ->references('id')
                 ->on('payment_methods')
                 ->onDelete('cascade');
 
-            $table->foreign('state_payment')
+            $table->foreign('id_state_payment')
                 ->references('id')
                 ->on('payment_states')
                 ->onDelete('cascade');

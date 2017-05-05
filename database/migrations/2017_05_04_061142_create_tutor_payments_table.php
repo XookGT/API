@@ -19,9 +19,9 @@ class CreateTutorPaymentsTable extends Migration
             $table->decimal('amount',5,2);
             $table->string('description',50)->nullable;
 
-            $table->integer('user_id')->unsigned();
+            $table->integer('id_user')->unsigned();
 
-            $table->foreign('user_id')
+            $table->foreign('id_user')
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');

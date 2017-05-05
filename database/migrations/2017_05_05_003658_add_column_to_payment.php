@@ -13,7 +13,18 @@ class AddColumnToPayment extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('payments', function(Blueprint $table)
+        {
+
+            $table->integer('id_bill')->unsigned();
+
+            $table->foreign('id_bill')
+                ->references('id')
+                ->on('bills')
+                ->onDelete('cascade');
+
+        }
+        );
     }
 
     /**
@@ -24,5 +35,10 @@ class AddColumnToPayment extends Migration
     public function down()
     {
         //
+        Schema::table('payments', function($table)
+        {
+            $table->dropColumn('id_bill');
+        }
+        );
     }
 }

@@ -20,15 +20,15 @@ class CreateBillsTable extends Migration
             $table->decimal('cost', 5, 2);
             $table->decimal('total_cost', 5, 2);
             
-            $table->integer('pucharse_order_id')->unsigned();
-            $table->integer('bill_state_id')->unsigned();
+            $table->integer('id_pucharse_order')->unsigned();
+            $table->integer('id_bill_state')->unsigned();
 
-            $table->foreign('pucharse_order_id')
+            $table->foreign('id_pucharse_order')
                 ->references('id')
                 ->on('purchase_orders')
                 ->onDelete('cascade');
 
-            $table->foreign('bill_state_id')
+            $table->foreign('id_bill_state')
                 ->references('id')
                 ->on('bill_states')
                 ->onDelete('cascade');

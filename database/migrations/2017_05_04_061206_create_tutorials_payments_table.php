@@ -22,31 +22,26 @@ class CreateTutorialsPaymentsTable extends Migration
             $table->decimal('total',5,2);
 
 
-            $table->integer('tutorial_has_place_id')->unsigned();
-            $table->integer('state_tutorial_payment_id')->unsigned();
-            $table->integer('tutor_payment_id')->unsigned();
+            $table->integer('id_tutorial_has_place')->unsigned();
+            $table->integer('id_state_tutorial_payment')->unsigned();
+            $table->integer('id_tutor_payment')->unsigned();
 
 
-            $table->foreign('tutorial_has_place_id')
+            $table->foreign('id_tutorial_has_place')
                 ->references('id')
                 ->on('tutorial_has_places')
                 ->onDelete('cascade');
 
 
-            $table->foreign('state_tutorial_payment_id')
+            $table->foreign('id_state_tutorial_payment')
                 ->references('id')
                 ->on('state_tutorial_payments')
                 ->onDelete('cascade');
 
-            $table->foreign('tutor_payment_id')
+            $table->foreign('id_tutor_payment')
                 ->references('id')
                 ->on('tutor_payments')
                 ->onDelete('cascade');
-
-
-
-
-
 
         });
     }
