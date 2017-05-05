@@ -120,7 +120,7 @@ class Categories extends Controller
     {
         $name = $id;
         try{
-            $categorie = App\Categorie::SearchByName($name);
+            $categorie = self::where('name',$name)->first();
 
             return response(['msj'=>'Hola y adios'],200);
         }
