@@ -116,6 +116,15 @@ class Categories extends Controller
 
     public function SearchByName($name)
     {
-        return Categorie::SearchByName($name);
+        try{
+            $categorie = Categorie::SearchByName($name);
+
+            return response(['msj'=>'Hola'],200);
+        }
+        catch(\Exceptio $e)
+        {
+            return response(['msj'=>'Error'],500);
+        }
+        
     }
 }

@@ -23,9 +23,10 @@ class Categorie extends Model
 
     public function SearchByName($name)
     {
-        dd("Hola");
-        $categorie = self::where('name',$name)->first();
+       
+        //$categorie = self::where('name',$name)->first();
 
-        return $categorie;
+        //return $categorie;
+        return $name." lo recibi";
     }
 }
