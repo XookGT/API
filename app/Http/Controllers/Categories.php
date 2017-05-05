@@ -113,4 +113,9 @@ class Categories extends Controller
     {
         //
     }
+
+    public function SearchByName($name)
+    {
+        return Categorie::SearchByName($name);
+    }
 }

@@ -20,4 +20,11 @@ class Categorie extends Model
             'starts',
             'rank',
     ];
+
+    public function SearchByName($name)
+    {
+        $categorie = self::where('name',$name)->first();
+
+        return $categorie;
+    }
 }
