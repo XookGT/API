@@ -122,7 +122,10 @@ class Categories extends Controller
         try{
             $categorie = Categorie::where('name',$name)->first();
 
-            return response([$categorie],200);
+            if($categorie!=null)
+                return response([$categorie],200);
+            else
+                return response(['msj'=>'Categorie do not exist on Xook'],401);
         }
         catch(\Exceptio $e)
         {
