@@ -23,7 +23,8 @@ class CreatePurchaseOrdersTable extends Migration
 
             $table->integer('id_state')->unsigned();
             $table->integer('id_user')->unsigned();
-            $table->integer('id_tutorial_place')->unsigned();
+            $table->integer('id_tutorial')->unsigned();
+            $table->integer('id_place')->unsigned();
 
 
             $table->foreign('id_state')
@@ -36,8 +37,13 @@ class CreatePurchaseOrdersTable extends Migration
                 ->on('users')
                 ->onDelete('cascade');
             
-            $table->foreign('id_tutorial_place')
-                ->references('id')
+            $table->foreign('id_tutorial')
+                ->references('id_tutorial')
+                ->on('tutorial_has_places')
+                ->onDelete('cascade');
+
+            $table->foreign('id_place')
+                ->references('id_place')
                 ->on('tutorial_has_places')
                 ->onDelete('cascade');
 
