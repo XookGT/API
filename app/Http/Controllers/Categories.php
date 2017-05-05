@@ -120,7 +120,7 @@ class Categories extends Controller
     {
         $name = $id;
         try{
-            $categorie = Categorie::SearchByName($name);
+            //$categorie = Categorie::SearchByName($name);
 
             return response(['msj'=>'Hola y adios'],200);
         }
