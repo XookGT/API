@@ -40,6 +40,6 @@ Route::resource('/state-tutotial-payment','StateTutorialPayments');
 Route::resource('/tutorial-day','TutorialDays');
 Route::resource('/tutorial-has-place','TutorialHasPlaces');
 Route::resource('/tutorial','Tutorials');
-Route::resource('/tutorial-payment','TutorialsPayments');
+Route::resource('/tutorial-payment','TutorialPayments');
 Route::resource('/tutor-payment','TutorPayments');
 Route::resource('/xookcc','XookCCs');
