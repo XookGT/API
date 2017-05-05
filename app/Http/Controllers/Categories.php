@@ -78,6 +78,8 @@ class Categories extends Controller
     public function show($id)
     {
         //
+
+        dd("Hola ");
     }
 
     /**
