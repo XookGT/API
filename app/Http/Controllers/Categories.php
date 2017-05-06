@@ -133,4 +133,23 @@ class Categories extends Controller
         }
         
     }
+
+    public function ShowAll()
+    {
+        try
+        {
+            $categories = Categorie::all();
+
+            if($categories!=null)
+                return response($categories,200);
+            else
+                return response(['msj'=>'Categories are clean'],401);
+
+        }
+        catch(\Exceptio $e)
+        {
+            return response(['msj'=>'Error'],500);
+        }
+        
+    }
 }
