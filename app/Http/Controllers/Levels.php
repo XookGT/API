@@ -35,6 +35,37 @@ class Levels extends Controller
     public function store(Request $request)
     {
         //
+        try
+        {
+            $this->validate($request,[
+            'name' => 'required|unique:leveles',
+            'starts' => 'required',
+            'rank' => 'required',
+
+            ]);
+
+            $level = new Level();
+            $level->name = $request->name;
+            $level->starts = 0;
+            $level->rank = 0;
+            
+            $level->save();
+
+            return response(['msj'=>'Successfull!!!. The ID for the new Level is '.$level->id],200);
+
+            /*
+                200 ok
+                500 error del servidor
+                404 not found
+                403 bad request
+                503 bad gw
+            */
+
+        }
+        catch (\Exception $e)
+        {
+            return response(['msj'=>'It has ocurred an error'],500);
+        }
     }
 
     /**
