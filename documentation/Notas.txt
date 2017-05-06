@@ -125,3 +125,17 @@ php artisan make:controller Tutorials --resource
 php artisan make:controller TutorialPayments --resource
 php artisan make:controller TutorPayments --resource
 php artisan make:controller XookCCs --resource
+
+
+Laravel CORS
+Libreria de laravel para permitir peticiones externas a nuestro servidore.
+
+obtenerlo https://github.com/barryvdh/laravel-cors
+
+Instalacion
+composer require barryvdh/laravel-cors
+
+agregar en config/app.php
+
+El service provider
+Barryvdh\Cors\ServiceProvider::class,
