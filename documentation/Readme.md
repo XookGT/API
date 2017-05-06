@@ -36,7 +36,7 @@ this [image](http://www.html5rocks.com/static/images/cors_server_flowchart.png).
 
                 `Successfull!!!. The ID for the new Categorie is 5` whit code 200
 
-                else
+else
 
                 `It has ocurred an error` whit code 500.
 
