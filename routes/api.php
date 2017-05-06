@@ -18,10 +18,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-
+Route::post('auth_login', 'ApiAuthController@authenticate');
 Route::group(['middleware' => 'cors'], function() {
     //
-    Route::post('auth_login', 'ApiAuthController@authenticate');
+    
     Route::resource('/bank','Banks');
     Route::resource('/bill','Bills');
     Route::resource('/bill-state','BillStates');
