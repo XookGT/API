@@ -46,5 +46,6 @@ Route::resource('/tutorial-payment','TutorialPayments');
 Route::resource('/tutor-payment','TutorPayments');
 Route::resource('/xookcc','XookCCs');
 Route::get('/categorie-name/{name}', 'Categories@SearchByName');
+Route::get('/categorie-all', 'Categories@ShowAll');
 
 
