@@ -21,10 +21,12 @@ this [image](http://www.html5rocks.com/static/images/cors_server_flowchart.png).
 * Adds CORS headers to your responses
 
 ## CATEGORIES
-### http://xook.com.gt:9080/categorie-name/{name}
+### categorie-name/{name}
 
 > **Method:** GET
+
 > **Request:** Include categorie name on the URL, for example:  `http://xook.com.gt:9080categorie-name/Matematicas`
+
 > **Response:** This method return the objet JSON whit the information of the course, for example:
 
 ```php
