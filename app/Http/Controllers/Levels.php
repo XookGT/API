@@ -64,7 +64,7 @@ class Levels extends Controller
         }
         catch (\Exception $e)
         {
-            return response(['msj'=>'It has ocurred an error'],$e->getMessage(),500);
+            return response(['msj'=>'It has ocurred an error'.$e->getMessage()],500);
         }
     }
 
