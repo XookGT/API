@@ -20,12 +20,12 @@ this [image](http://www.html5rocks.com/static/images/cors_server_flowchart.png).
 * Handles CORS pre-flight OPTIONS requests
 * Adds CORS headers to your responses
 
-## CATEGORIES
-### categorie-name/{name}
+## METHODS FOR CATEGORIES
+### Search Category by Name
 
 > **Method:** GET
 
-> **Request:** Include categorie name on the URL, for example:  `http://xook.com.gt:9080categorie-name/Matematicas`
+> **Request:** Include categorie name on the URL, for example:  `http://xook.com.gt:9080/categorie-name/Matematicas`
 
 > **Response:** This method return the objet JSON whit the information of the course, for example:
 
@@ -38,10 +38,58 @@ this [image](http://www.html5rocks.com/static/images/cors_server_flowchart.png).
 }
 ```
 
+### Show All The Categories
+> **Method:** GET
 
+> **Request:** This method no require params, only call de method, for example:  `http://xook.com.gt:9080/categorie-all`
 
+> **Response:** This method return the objet JSON whit the information of all course, for example:
 
-## Global usage
+```php
+[{
+	"id": 1,
+	"name": "Matematicas",
+	"starts": "5",
+	"rank": "0"
+}, {
+	"id": 2,
+	"name": "Fisica",
+	"starts": "5",
+	"rank": "0"
+}, {
+	"id": 3,
+	"name": "Musica",
+	"starts": "5",
+	"rank": "0"
+}, {
+	"id": 4,
+	"name": "Ingenieira Economica",
+	"starts": "5",
+	"rank": "0"
+}, {
+	"id": 5,
+	"name": "Lenguajes Formales y Compiladores",
+	"starts": "5",
+	"rank": "0"
+}, {
+	"id": 6,
+	"name": "Lenguajes Formales y Compiladores 2",
+	"starts": "5",
+	"rank": "0"
+}, {
+	"id": 7,
+	"name": "Lenguajes Formales de programacion",
+	"starts": "5",
+	"rank": "0"
+}, {
+	"id": 8,
+	"name": "Derecho Civil",
+	"starts": "5",
+	"rank": "0"
+}]
+```
+
+## METHODS FOR LEVELS
 
 To allow CORS for all your routes, add the `HandleCors` middleware in the `$middleware` property of  `app/Http/Kernel.php` class:
 
@@ -52,7 +100,7 @@ protected $middleware = [
 ];
 ```
 
-## Group middleware
+## METHODS FOR COURSES
 
 If you want to allow CORS on a specific middleware group or route, add the `HandleCors` middleware to your group:
 
@@ -69,7 +117,7 @@ protected $middlewareGroups = [
 ];
 ```
 
-## Configuration
+## METHODS FOR TUTORIALS
 
 The defaults are set in `config/cors.php`. Copy this file to your own config directory to modify the values. You can publish the config using this command:
 ```sh
@@ -119,7 +167,7 @@ And register the ServiceProvider:
 $app->register(Barryvdh\Cors\ServiceProvider::class);
 ```
 
-## Global usage for Lumen
+## METHODS FOR COUNTRIES
 To allow CORS for all your routes, add the `HandleCors` middleware to the global middleware:
 ```php
 $app->middleware([
@@ -128,7 +176,7 @@ $app->middleware([
 ]);
 ```
 
-## Group middleware for Lumen
+## METHODS FOR PROVINCES
 If you want to allow CORS on a specific middleware group or route, add the `HandleCors` middleware to your group:
 
 ```php
@@ -138,7 +186,7 @@ $app->routeMiddleware([
 ]);
 ```
 
-## Common problems and errors (Pre Laravel 5.3)
+## METHODS FOR CITIES
 In order for the package to work, the request has to be a valid CORS request and needs to include an "Origin" header.
 
 When an error occurs, the middleware isn't run completely. So when this happens, you won't see the actual result, but will get a CORS error instead.
