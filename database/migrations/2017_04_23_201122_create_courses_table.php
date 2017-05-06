@@ -29,7 +29,7 @@ class CreateCoursesTable extends Migration
 
             $table->foreign('id_level')
                 ->references('id')
-                ->on('leveles')
+                ->on('levels')
                 ->onDelete('cascade');
         });
     }

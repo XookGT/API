@@ -38,7 +38,7 @@ class Levels extends Controller
         try
         {
             $this->validate($request,[
-            'name' => 'required|unique:leveles',
+            'name' => 'required|unique:levels',
             'starts' => 'required',
             'rank' => 'required',
 
