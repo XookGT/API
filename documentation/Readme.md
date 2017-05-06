@@ -21,6 +21,27 @@ this [image](http://www.html5rocks.com/static/images/cors_server_flowchart.png).
 * Adds CORS headers to your responses
 
 ## METHODS FOR CATEGORIES
+
+### Create new Category
+
+> **Method:** POST
+
+> **Request:**  'name' => 'required|unique:categories',
+                'starts' => 'required',
+                'rank' => 'required'  
+                
+                `http://xook.com.gt:9080/api/categorie`
+
+> **Response:** If the category has been successfully added a message like the following is restored:
+
+                `Successfull!!!. The ID for the new Categorie is 5` whit code 200
+
+                else
+
+                `It has ocurred an error` whit code 500.
+
+
+
 ### Search Category by Name
 
 > **Method:** GET
