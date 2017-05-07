@@ -32,7 +32,6 @@ class Course extends Model
             ->join('levels', 'levels.id', '=', 'courses.id_level')
             ->select('courses.*', 'categories.name as categorie','levels.name as level')
             ->get();
-
-       dd($course);
+        return $course;
     }
 }

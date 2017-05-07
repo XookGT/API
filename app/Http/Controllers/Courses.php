@@ -90,7 +90,7 @@ class Courses extends Controller
     {
         //
         $course = new Course();
-        $course->getAll();
+        return response($course->getAll(),200);
     }
 
     /**
