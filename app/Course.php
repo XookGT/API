@@ -22,4 +22,14 @@ class Course extends Model
             'id_categorie',
             'id_level',
     ];
+
+    public function getAll()
+    {
+        $course = DB::table('courses')
+            ->join('categories', 'categories.id', '=', 'courses.id_categorie')
+            ->join('levels', 'levels.id', '=', 'courses.state')
+            ->select('courses.*', 'categories.name	 as categorie','levels.name	 as level')->get();
+
+       dd($course);
+    }
 }
