@@ -193,21 +193,41 @@ else
 ### Show All The Courses
 > **Method:** GET
 
-> **Request:** This method no require params, only call de method, for example:  `http://xook.com.gt:9080/api/level-all`
+> **Request:** This method no require params, only call de method, for example:  `http://xook.com.gt:9080/api/course-all`
 
 > **Response:** This method return the objet JSON whit the information of all levels, for example:
 
 ```php
 [{
-	"id": 1,
-	"name": "Universidad",
+	"id": "1",
+	"name": "Matematica Aplicada 1",
+	"description": "Segun el pensum de la USAC",
 	"starts": "0",
-	"rank": "0"
+	"rank": "0",
+	"id_categorie": "1",
+	"id_level": "1",
+	"categorie": "Matematicas",
+	"level": "Universidad"
 }, {
-	"id": 2,
-	"name": "Diversificado",
+	"id": "2",
+	"name": "Matematica Aplicada 2",
+	"description": "Segun el pensum de la USAC",
 	"starts": "0",
-	"rank": "0"
+	"rank": "0",
+	"id_categorie": "1",
+	"id_level": "1",
+	"categorie": "Matematicas",
+	"level": "Universidad"
+}, {
+	"id": "3",
+	"name": "Matematica Aplicada 3",
+	"description": "Segun el pensum de la USAC",
+	"starts": "0",
+	"rank": "0",
+	"id_categorie": "1",
+	"id_level": "1",
+	"categorie": "Matematicas",
+	"level": "Universidad"
 }]
 ```
 
