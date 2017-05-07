@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Course;
+use Illuminate\Support\Facades\DB;
 
 class Courses extends Controller
 {
