@@ -8,6 +8,7 @@ class Course extends Model
 {
     //Cada Curso pertenece a un nivel y una categoria
 
+    public $timestamps = false;
      /**
      * The attributes that are mass assignable.
      *
