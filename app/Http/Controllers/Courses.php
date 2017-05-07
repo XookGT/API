@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Course;
 
 class Courses extends Controller
 {
@@ -35,6 +36,46 @@ class Courses extends Controller
     public function store(Request $request)
     {
         //
+
+        try
+        {
+            $this->validate($request,[
+            'name' => 'required|unique:categories',
+            'description' => 'required',
+            'id_categorie' => 'numeric|required',
+            'id_level' => 'numeric|required',
+
+            ]);
+
+
+            $course = new Course();
+            $course->name = $request->name;
+            $course->description = $request->description;
+            $course->id_categorie = $request->id_categorie;
+            $course->id_level = $request->id_level;
+
+            
+            $course->save();
+
+
+
+            return response(['msj'=>'Successfull!!!. The ID for the new Categorie is '.$course->id],200);
+
+            /*
+                200 ok
+                500 error del servidor
+                404 not found
+                403 bad request
+                503 bad gw
+            */
+
+        }
+        catch (\Exception $e)
+        {
+
+            //perame ya se que es, es que estan en la routa de autenticacion creo, tiene q estar autenticado
+            return response(['msj'=>'it has ocurred an error'.$e->getMessage()],500);
+        }
     }
 
     /**
