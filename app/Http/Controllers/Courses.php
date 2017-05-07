@@ -92,7 +92,7 @@ class Courses extends Controller
                 $course = DB::table('courses')
             ->join('categories', 'categories.id', '=', 'courses.id_categorie')
             ->join('levels', 'levels.id', '=', 'courses.state')
-            ->select('courses.*', 'categories.name	 as categorie','levels.name	 as level')->get();
+            ->select('courses.name course', 'categories.name	 as categorie','levels.name	 as level')->get();
 
        dd($course);
     }
