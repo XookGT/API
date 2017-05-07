@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Course;
-use Illuminate\Support\Facades\DB;
 
 class Courses extends Controller
 {
@@ -90,12 +89,7 @@ class Courses extends Controller
     public function show($id)
     {
         //
-                $course = DB::table('courses')
-            ->join('categories', 'categories.id', '=', 'courses.id_categorie')
-            ->join('levels', 'levels.id', '=', 'courses.state')
-            ->select('courses.name course', 'categories.name	 as categorie','levels.name	 as level')->get();
-
-       dd($course);
+        Course::getAll();
     }
 
     /**
