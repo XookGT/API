@@ -134,7 +134,7 @@ class Courses extends Controller
 
             if($courses!=null)
             {
-                return response($course, 200);
+                return response($courses, 200);
             }else
             {
                 return response(['msj'=>'There is not courses'.$e->getMessage()],403);
