@@ -171,19 +171,44 @@ else
 
 ## METHODS FOR COURSES
 
-If you want to allow CORS on a specific middleware group or route, add the `HandleCors` middleware to your group:
+### Create a new Course
+
+> **Method:** POST
+
+> **Request:** Include params:
+								'name' => 'required|unique:categories',
+            					'description' => 'required',
+            					'id_categorie' => 'numeric|required',
+            					'id_level' => 'numeric|required',
+
+								`http://xook.com.gt:9080/api/course/`
+
+> **Response:** If the course has been successfully added a message like the following is restored:
+
+                `Successfull!!!. The ID for the new course is 5` whit code 200
+else
+
+                `It has ocurred an error` whit code 500.
+
+### Show All The Courses
+> **Method:** GET
+
+> **Request:** This method no require params, only call de method, for example:  `http://xook.com.gt:9080/api/level-all`
+
+> **Response:** This method return the objet JSON whit the information of all levels, for example:
 
 ```php
-protected $middlewareGroups = [
-    'web' => [
-       // ...
-    ],
-
-    'api' => [
-        // ...
-        \Barryvdh\Cors\HandleCors::class,
-    ],
-];
+[{
+	"id": 1,
+	"name": "Universidad",
+	"starts": "0",
+	"rank": "0"
+}, {
+	"id": 2,
+	"name": "Diversificado",
+	"starts": "0",
+	"rank": "0"
+}]
 ```
 
 ## METHODS FOR TUTORIALS

@@ -49,6 +49,6 @@ Route::get('/categorie-name/{name}', 'Categories@SearchByName');
 Route::get('/categorie-all', 'Categories@ShowAll');
 Route::get('/level-name/{name}', 'Levels@SearchByName');
 Route::get('/level-all', 'Levels@ShowAll');
-
+Route::get('/course-all', 'Courses@ShowAll');
 
 

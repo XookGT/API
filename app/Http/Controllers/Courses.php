@@ -125,4 +125,24 @@ class Courses extends Controller
     {
         //
     }
+
+    public function ShowAll()
+    {
+        try
+        {
+            $courses = Course::getAll();
+
+            if($courses!=null)
+            {
+                return response($course, 200);
+            }else
+            {
+                return response(['msj'=>'There is not courses'.$e->getMessage()],403);
+            }
+
+        }catch(\Exception $e)
+        {
+            return response(['msj'=>'It has ocurred an error. Error: '.$e->getMessage()],500);
+        }
+    }
 }
