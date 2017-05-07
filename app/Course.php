@@ -24,7 +24,7 @@ class Course extends Model
             'id_level',
     ];
 
-    public function getAll()
+    static public function getAll()
     {
 
         $course = DB::table('courses')

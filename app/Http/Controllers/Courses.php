@@ -89,8 +89,7 @@ class Courses extends Controller
     public function show($id)
     {
         //
-        $course = new Course();
-        return response($course->getAll(),200);
+        return response(Course::getAll(),200);
     }
 
     /**
