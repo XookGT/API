@@ -30,7 +30,7 @@ class Course extends Model
         $course = DB::table('courses')
             ->join('categories', 'categories.id', '=', 'courses.id_categorie')
             ->join('levels', 'levels.id', '=', 'courses.id_level')
-            ->select('courses.name', 'categories.name','levels.name')
+            ->select('courses.*', 'categories.name as categorie','levels.name as level')
             ->get();
 
        dd($course);
