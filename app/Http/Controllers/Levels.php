@@ -112,4 +112,41 @@ class Levels extends Controller
     {
         //
     }
+
+    public function SearchByName($id)
+    {
+        $name = $id;
+
+        try{
+            $level = Level::where('name',$name)->first();
+            if($level!=null)
+                return response($level,200);
+            else
+                return response(['msj'=>'Level do not exist on Xook'],401);
+        }
+        catch(\Exceptio $e)
+        {
+            return response(['msj'=>'Error'],500);
+        }
+
+    }
+
+    public function ShowAll()
+    {
+        try
+        {
+            $level = Level::all();
+
+            if($level!=null)
+                return response($level,200);
+            else
+                return response(['msj'=>'Level are clean'],401);
+
+        }
+        catch(\Exceptio $e)
+        {
+            return response(['msj'=>'Error'],500);
+        }
+        
+    }
 }
