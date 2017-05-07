@@ -45,12 +45,16 @@ class Categories extends Controller
 
             ]);
 
+
             $categorie = new Categorie();
             $categorie->name = $request->name;
             $categorie->starts = $request->starts;
             $categorie->rank = $request->rank;
+
             
             $categorie->save();
+
+
 
             return response(['msj'=>'Successfull!!!. The ID for the new Categorie is '.$categorie->id],200);
 
@@ -65,8 +69,9 @@ class Categories extends Controller
         }
         catch (\Exception $e)
         {
-            return response(['msj'=>'it has ocurred an error'],500);
+            return response(['msj'=>'it has ocurred an error'.$e->getMessage()],500);
         }
+
     }
 
     /**
