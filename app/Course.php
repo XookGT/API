@@ -26,6 +26,7 @@ class Course extends Model
 
     public function getAll()
     {
+        dd('Model');
         $course = DB::table('courses')
             ->join('categories', 'categories.id', '=', 'courses.id_categorie')
             ->join('levels', 'levels.id', '=', 'courses.state')
