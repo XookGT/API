@@ -62,9 +62,9 @@ else
 ### Show All The Categories
 > **Method:** GET
 
-> **Request:** This method no require params, only call de method, for example:  `http://xook.com.gt:9080/categorie-all`
+> **Request:** This method no require params, only call de method, for example:  `http://xook.com.gt:9080/api/categorie-all`
 
-> **Response:** This method return the objet JSON whit the information of all course, for example:
+> **Response:** This method return the objet JSON whit the information of all Categories, for example:
 
 ```php
 [{
@@ -112,13 +112,61 @@ else
 
 ## METHODS FOR LEVELS
 
-To allow CORS for all your routes, add the `HandleCors` middleware in the `$middleware` property of  `app/Http/Kernel.php` class:
+### Create new Level
+
+> **Method:** POST
+
+> **Request:**  'name' => 'required|unique:levels',
+                'starts' => 'required',
+                'rank' => 'required'  
+                
+                `http://xook.com.gt:9080/api/level`
+
+> **Response:** If the level has been successfully added a message like the following is restored:
+
+                `Successfull!!!. The ID for the new Level is 5` whit code 200
+
+else
+
+                `It has ocurred an error` whit code 500.
+
+
+### Search Level by Name
+
+> **Method:** GET
+
+> **Request:** Include Level name on the URL, for example:  `http://xook.com.gt:9080/api/level-name/Universidad`
+
+> **Response:** This method return the objet JSON whit the information of the level, for example:
 
 ```php
-protected $middleware = [
-    // ...
-    \Barryvdh\Cors\HandleCors::class,
-];
+{
+	"id": 1,
+	"name": "Universidad",
+	"starts": "0",
+	"rank": "0"
+}
+```
+
+### Show All The Levels
+> **Method:** GET
+
+> **Request:** This method no require params, only call de method, for example:  `http://xook.com.gt:9080/api/level-all`
+
+> **Response:** This method return the objet JSON whit the information of all levels, for example:
+
+```php
+[{
+	"id": 1,
+	"name": "Universidad",
+	"starts": "0",
+	"rank": "0"
+}, {
+	"id": 2,
+	"name": "Diversificado",
+	"starts": "0",
+	"rank": "0"
+}]
 ```
 
 ## METHODS FOR COURSES
