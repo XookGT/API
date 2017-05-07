@@ -47,8 +47,8 @@ Route::resource('/tutor-payment','TutorPayments');
 Route::resource('/xookcc','XookCCs');
 Route::get('/categorie-name/{name}', 'Categories@SearchByName');
 Route::get('/categorie-all', 'Categories@ShowAll');
-Route::get('/level-name/{name}', 'Level@SearchByName');
-Route::get('/level-all', 'Level@ShowAll');
+Route::get('/level-name/{name}', 'Levels@SearchByName');
+Route::get('/level-all', 'Levesl@ShowAll');
 
 
 
