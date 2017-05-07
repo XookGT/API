@@ -90,8 +90,7 @@ class Courses extends Controller
     {
         //
         //dd('hola');
-        $course = new Course();
-        $course->getAll();
+        Course::getAll();
     }
 
     /**
