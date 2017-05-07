@@ -89,6 +89,7 @@ class Courses extends Controller
     public function show($id)
     {
         //
+        dd('hola');
         Course::getAll();
     }
 
