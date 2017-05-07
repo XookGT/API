@@ -21,12 +21,15 @@ class Categorie extends Model
             'rank',
     ];
 
+
     public function SearchByName($name)
     {
        
-        //$categorie = self::where('name',$name)->first();
+        $categorie = DB::select('select * from categories  where name = ?', [$name])->first();
 
-        //return $categorie;
-        return $name." lo recibi";
+        if ($categorie!=null)
+            return $name." lo recibi";
+        else 
+            return false;
     }
 }

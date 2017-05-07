@@ -46,7 +46,7 @@ else
 
 > **Method:** GET
 
-> **Request:** Include categorie name on the URL, for example:  `http://xook.com.gt:9080/categorie-name/Matematicas`
+> **Request:** Include categorie name on the URL, for example:  `http://xook.com.gt:9080/api/categorie-name/Matematicas`
 
 > **Response:** This method return the objet JSON whit the information of the course, for example:
 

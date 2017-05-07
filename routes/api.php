@@ -49,3 +49,4 @@ Route::get('/categorie-name/{name}', 'Categories@SearchByName');
 Route::get('/categorie-all', 'Categories@ShowAll');
 
 
+

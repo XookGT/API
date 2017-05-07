@@ -10,7 +10,7 @@ class ApiAuthController extends Controller
 {
     public function authenticate(Request $request)
     {
-        // grab credentials from the request
+        // grab credentials from the request 
         $credentials = $request->only('email', 'password');
 
         try {
@@ -25,6 +25,7 @@ class ApiAuthController extends Controller
 
         // all good so return the token
         return response()->json(compact('token'));
+
     }
 }
 

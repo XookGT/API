@@ -69,6 +69,8 @@ class Categories extends Controller
         }
         catch (\Exception $e)
         {
+
+            //perame ya se que es, es que estan en la routa de autenticacion creo, tiene q estar autenticado
             return response(['msj'=>'it has ocurred an error'.$e->getMessage()],500);
         }
 
@@ -124,9 +126,9 @@ class Categories extends Controller
     public function SearchByName($id)
     {
         $name = $id;
+
         try{
             $categorie = Categorie::where('name',$name)->first();
-
             if($categorie!=null)
                 return response($categorie,200);
             else
@@ -136,7 +138,7 @@ class Categories extends Controller
         {
             return response(['msj'=>'Error'],500);
         }
-        
+
     }
 
     public function ShowAll()
